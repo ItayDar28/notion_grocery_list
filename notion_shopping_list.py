@@ -111,13 +111,6 @@ class Shopping_Table:
             time.sleep(10)
             i += 1
 
-    def real_run(self):
-        self.add_to_shoping_dict()
-        print(f"list_size = {len(self.shopping_dict)}")
-        delete_list = self.check_if_purchased()
-        self.delete_from_shopping_dict(delete_list)
-
-
 def Main():
     while True:
         try:
@@ -135,7 +128,6 @@ def Main():
 
             shops = Shopping_Table(token=TOKEN_V_2, page_url=url, session=session)
             shops.run()
-            # return shops.real_run
         except:
             pass
 
