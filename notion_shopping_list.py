@@ -116,15 +116,15 @@ def Main():
         try:
             "new session - shopping list"
             try:
-                engine = create_engine('mysql+mysqlconnector://itda:28031994@127.0.0.1:3306/testdatabase')
+                engine = create_engine('connection-data')
                 Base.metadata.create_all(engine)
                 Session = sessionmaker(bind=engine)
                 session = Session()
             except:
                 print("error2")
 
-            TOKEN_V_2 = "e82f30cd27076b422ce1adab0767972fa13a3f98ae28884948af098d7c6195d1096a006c2c5ee0e719aaf79cba6f7c8ceae15e2ffc98abde445f8d4670b666d1018c2a268c91a62ec08feeaa145d"
-            url = "https://www.notion.so/0eaf48edc22e45eea0026c08ca84795b?v=299a06daa0eb488aa5b7b1bbd3a71fa8"
+            TOKEN_V_2 = "your token"
+            url = "table page url"
 
             shops = Shopping_Table(token=TOKEN_V_2, page_url=url, session=session)
             shops.run()
